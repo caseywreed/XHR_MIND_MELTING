@@ -1,0 +1,6 @@
+var Predator = (function () {
+
+
+
+
+}())
