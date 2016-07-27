@@ -1,19 +1,17 @@
 var Predator = (function () {
 
-  var carnivores = []
-  var herbivores = []
 
   return {
     getCarnivores: function (callback) {
       var xhr = new XMLHttpRequest()
       xhr.open("GET", "carnivores.json")
       xhr.addEventListener("load", function() {
-        carnivores = JSON.parse(xhr.responseText)
+        var carnivores = JSON.parse(xhr.responseText)
         callback(carnivores) //Execute the callback within this function or else you don't have access to it
       })
       xhr.send()
-
     },
+
     getHerbivores: function (callback) {
       var xhr = new XMLHttpRequest()
       xhr.open("GET", "herbivores.json")
@@ -25,3 +23,5 @@ var Predator = (function () {
     }
   }
 }())
+
+
